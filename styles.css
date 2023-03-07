@@ -193,7 +193,6 @@ input:checked ~ .bubble::after {
 .todo-item .todo-content {
   flex-grow: 1;
   flex-shrink: 1;
-  border: 1px solid red;
 }
 
 .todo-item .todo-content input {
@@ -203,6 +202,7 @@ input:checked ~ .bubble::after {
 }
 
 .todo-item .actions {
+  margin-left: 2.5rem;
   display: flex;
   align-items: center;
 }
