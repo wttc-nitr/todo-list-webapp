@@ -191,13 +191,15 @@ input:checked ~ .bubble::after {
 }
 
 .todo-item .todo-content {
-  flex: 1;
-  /* border: 1px solid red; */
+  flex-grow: 1;
+  flex-shrink: 1;
+  border: 1px solid red;
 }
 
 .todo-item .todo-content input {
   color: var(--dark);
   font-size: 1.125rem;
+  width: 100%;
 }
 
 .todo-item .actions {
