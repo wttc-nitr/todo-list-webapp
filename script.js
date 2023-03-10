@@ -96,12 +96,12 @@ function DisplayList () {
 
     input.addEventListener('click', (e) => {
       todo.done = e.target.checked;
-      localStorage.setItem('Cache', JSON.stringify(Cache));
+      localStorage.setItem('Cache', JSON.stringify(Cache)); // whenever there is change, update it
 
       if (todo.done)
         todoItem.classList.add('done');
 
-      DisplayList();
+      DisplayList();                                        // and display the updated list
 
     });
 
@@ -116,18 +116,17 @@ function DisplayList () {
         edit.innerHTML = "Edit";
         input.setAttribute('readonly', true);
         todo.content = e.target.value;
-        localStorage.setItem('Cache', JSON.stringify(Cache));
+        localStorage.setItem('Cache', JSON.stringify(Cache)); // changed ?? update it
 
-        DisplayList();
+        DisplayList();                                        // now, display the list
       });
     });
     
     Delete.addEventListener('click', (e) => {
+      todoItem.remove();                      // remove the item and then update this in localStorage
       Cache = Cache.filter(t => t != todo);
 
       localStorage.setItem('Cache', JSON.stringify(Cache));
-
-      DisplayList();
     });
 
   });
