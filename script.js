@@ -66,7 +66,7 @@ function DisplayList () {
     const content = document.createElement('div');
     content.classList.add('todo-content');
 
-    content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
+    content.innerHTML = `<input type="text" value="${todo.content}" readonly class="inputField">`;
     
     const actions = document.createElement('div');
     actions.classList.add('actions');
@@ -98,7 +98,7 @@ function DisplayList () {
       todo.done = e.target.checked;
       localStorage.setItem('Cache', JSON.stringify(Cache));
 
-      if (todo.done == false)
+      if (todo.done)
         todoItem.classList.add('done');
 
       DisplayList();
@@ -119,7 +119,7 @@ function DisplayList () {
         localStorage.setItem('Cache', JSON.stringify(Cache));
 
         DisplayList();
-      })
+      });
     });
     
     Delete.addEventListener('click', (e) => {
@@ -132,4 +132,7 @@ function DisplayList () {
 
   });
 }
+
+
+
 
