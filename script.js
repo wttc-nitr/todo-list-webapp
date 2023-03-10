@@ -96,12 +96,13 @@ function DisplayList () {
 
     input.addEventListener('click', (e) => {
       todo.done = e.target.checked;
-      localStorage.setItem('Cache', JSON.stringify(Cache)); // whenever there is change, update it
 
       if (todo.done)
         todoItem.classList.add('done');
+      else todoItem.classList.remove('done');
 
-      DisplayList();                                        // and display the updated list
+      localStorage.setItem('Cache', JSON.stringify(Cache)); // whenever there is change, update it
+      // DisplayList();                                        // and display the updated list
 
     });
 
