@@ -66,7 +66,7 @@ function DisplayList () {
     const content = document.createElement('div');
     content.classList.add('todo-content');
 
-    content.innerHTML = `<input type="text" value="${todo.content}" readonly class="inputField">`;
+    content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
     
     const actions = document.createElement('div');
     actions.classList.add('actions');
@@ -102,24 +102,21 @@ function DisplayList () {
       else todoItem.classList.remove('done');
 
       localStorage.setItem('Cache', JSON.stringify(Cache)); // whenever there is change, update it
-      // DisplayList();                                        // and display the updated list
-
     });
 
     edit.addEventListener('click', (e) => {
       edit.innerHTML = "Done";
       const input = content.querySelector('input');
-      // input.readOnly = false;
-      input.removeAttribute('readonly');
+
+      input.readOnly = false;
       input.focus();
-
-      input.addEventListener('blur', (e) => {
+      
+      input.addEventListener('blur', (ip) => {
         edit.innerHTML = "Edit";
-        input.setAttribute('readonly', true);
-        todo.content = e.target.value;
+        
+        input.readOnly = true;
+        todo.content = ip.target.value;
         localStorage.setItem('Cache', JSON.stringify(Cache)); // changed ?? update it
-
-        DisplayList();                                        // now, display the list
       });
     });
     
