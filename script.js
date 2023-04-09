@@ -114,6 +114,7 @@ function DisplayList() {
         notesTxt.readOnly = false;
       } else {
         edit.innerHTML = "Edit";
+        notesTxt.readOnly = true;
         todo.content = notesTxt.value;
         localStorage.setItem("Cache", JSON.stringify(Cache));
       }
