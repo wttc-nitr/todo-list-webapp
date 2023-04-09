@@ -92,6 +92,10 @@ function DisplayList() {
 
     if (todo.done) todoItem.classList.add("done");
 
+    /**
+     * Display done, now adding functionalities for buttons and checkbox
+     */
+
     checkboxInput.addEventListener("click", (e) => {
       todo.done = e.target.checked;
 
