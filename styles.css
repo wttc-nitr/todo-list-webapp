@@ -233,3 +233,7 @@ input:checked ~ .bubble::after {
   text-decoration: line-through;
   color: var(--grey);
 }
+
+.todo-item:hover {
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+}
