@@ -31,8 +31,6 @@ input:not([type="radio"]):not([type="checkbox"]) , button {
 body {
   background: var(--light);
   color: var(--dark);
-  width: 50%;
-  margin: auto;
 }
 
 section {
